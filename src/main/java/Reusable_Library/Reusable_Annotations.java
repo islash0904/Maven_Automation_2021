@@ -1,5 +1,6 @@
 package Reusable_Library;
 
+
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +12,7 @@ import org.testng.annotations.BeforeSuite;
 import java.lang.reflect.Method;
 import java.util.UUID;
 
-public class Reusable_Annotation {
+public class Reusable_Annotations {
 
     public static WebDriver driver;
     public static ExtentReports reports;
@@ -20,13 +21,14 @@ public class Reusable_Annotation {
     @BeforeSuite
     public void SetDriverAndReport(){
         driver = Reusable_Actions_Loggers.setDriver();
-        reports = new ExtentReports("src/main/java/HTML_Report/Automation_Report_"+Reusable_Actions_Loggers_POM.getDateTime()+".html",true);
+        reports = new ExtentReports("src/main/java/HTML_Report/Automation_Report"+ UUID.randomUUID()+".html",true);
     }//end of before suite
 
     @BeforeMethod
     public void captureTestName(Method methodName){
         logger = reports.startTest(methodName.getName());
     }//end of before method
+
 
     @AfterMethod
     public void endTest(){
@@ -40,10 +42,5 @@ public class Reusable_Annotation {
     }//end of after suite
 
 
+}//end of class
 
-
-
-
-
-
-}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Smoke Test">
+    <parameter name="Browser" value="Chrome"></parameter>
+    <test name="Chrome Test" preserve-order="true">
+        <classes>
+            <class name="Day12_011622.ListWebelement_USPS_CrossBrowser" />
+        </classes>
+    </test> <!-- Test -->
+    <parameter name="Browser" value="firefox"></parameter>
+    <test name="FireFox Test" preserve-order="true">
+        <classes>
+            <class name="Day12_011622.ListWebelement_USPS_CrossBrowser" />
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->
