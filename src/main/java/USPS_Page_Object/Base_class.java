@@ -1,10 +1,11 @@
 package USPS_Page_Object;
 
-import Reusable_Library.Reusable_Annotation;
+
+import Reusable_Library.Reusable_Annotations;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class Base_class extends Reusable_Annotation {
+public class Base_class extends Reusable_Annotations {
 
     public Base_class(WebDriver driver){
         PageFactory.initElements(driver,this);

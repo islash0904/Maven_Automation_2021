@@ -1,27 +1,24 @@
 package Hulu;
 
 import Reusable_Library.Reusable_Actions_Loggers_POM;
-import Reusable_Library.Reusable_Annotation;
+import Reusable_Library.Reusable_Annotations;
 import com.relevantcodes.extentreports.ExtentTest;
-import jdk.jshell.JShell;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.util.concurrent.Flow;
-
-public class Amount_page3 extends Reusable_Annotation {
+public class Amount_page3 extends Reusable_Annotations{
 
     ExtentTest logger;
     public Amount_page3(WebDriver driver){
         PageFactory.initElements(driver,this);
-        this.logger = Reusable_Annotation.logger;
+        this.logger = Reusable_Annotations.logger;
     }//end of the constructor method
 
-   @FindBy(xpath = "//*[text()='$6.99/mo']")
+   @FindBy(xpath = "//*[@class='ledger__price']")
     WebElement Subscription;
-    @FindBy(xpath = "//*[@class='panel large'][2]")
+    @FindBy(xpath = "//*[@class='ledger__summary")
     WebElement TotalAmount;
 
     public String SubsriptionAmount() {
@@ -31,7 +28,7 @@ public class Amount_page3 extends Reusable_Annotation {
 
     public String Totalaount(){
         String  Totalaount = Reusable_Actions_Loggers_POM.getTextMethod(driver,TotalAmount,logger,"Due today");
-        return Totalaount;
+       return Totalaount;
     }//End
 
 

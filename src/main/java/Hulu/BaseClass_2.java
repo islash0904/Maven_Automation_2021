@@ -1,10 +1,11 @@
 package Hulu;
 
-import Reusable_Library.Reusable_Annotation;
+
+import Reusable_Library.Reusable_Annotations;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class BaseClass_2 extends Reusable_Annotation {
+public class BaseClass_2 extends Reusable_Annotations {
 
     public BaseClass_2(WebDriver driver){
         PageFactory.initElements(driver,this);

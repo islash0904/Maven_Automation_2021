@@ -1,11 +1,12 @@
 package Day14_012322;
 
-import Reusable_Library.Reusable_Annotation;
+import Reusable_Library.Reusable_Annotations;
+import Reusable_Library.Reusable_Annotations;
 import USPS_Page_Object.Base_class;
 import com.relevantcodes.extentreports.LogStatus;
 import org.testng.annotations.Test;
 
-public class USPS_SHIP_A_LABEL_POM extends Reusable_Annotation {
+public class USPS_SHIP_A_LABEL_POM extends Reusable_Annotations {
 
     @Test
     public void USPS_Verify_Tabs_Then_Ship_A_Label() {

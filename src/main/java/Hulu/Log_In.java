@@ -1,28 +1,29 @@
 package Hulu;
 
 import Reusable_Library.Reusable_Actions_Loggers_POM;
-import Reusable_Library.Reusable_Annotation;
+import Reusable_Library.Reusable_Annotations;
+import Reusable_Library.Reusable_Annotations;
 import com.relevantcodes.extentreports.ExtentTest;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Log_In extends Reusable_Annotation {
+public class Log_In extends Reusable_Annotations {
 
     ExtentTest logger;
     public Log_In(WebDriver driver){
         PageFactory.initElements(driver,this);
-        this.logger = Reusable_Annotation.logger;
+        this.logger = Reusable_Annotations.logger;
     }//end of the constructor method
 
-@FindBy(xpath = "//*[@class='navigation__login-button navigation__action-button navigation__cta']")
+@FindBy(xpath = "//*[@class='navigation__right-items']")
     WebElement LogIn;
-    @FindBy(xpath = "//*[@id='email_id']")
+    @FindBy(xpath = "//*[@class='jsx-4282396490 hulu-login-input']")
     WebElement emailid;
-    @FindBy(xpath = "//*[@id='password_id']")
+    @FindBy(xpath = "//*[@class='jsx-4282396490 hulu-login-input']")
     WebElement passWord;
-    @FindBy(xpath = "//*[@class='jsx-4282396490 button-dark login-button']")
+    @FindBy(xpath = "//*[@data-automationid='login-button']")
     WebElement LogInAccount;
 
     public void login(){

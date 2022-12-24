@@ -25,8 +25,8 @@ public class Hulu_TV_MOVIES_Actions {
 
         ArrayList<String> emails = new ArrayList<>();
 
-        emails.add("sandths9879887874487@gmail.com");
-        emails.add("giveugf9987075678 9687@gmail.com");
+        emails.add("sandths987988656776487@gmail.com");
+        emails.add("giveugf9987075657769687@gmail.com");
 
 
         ArrayList<String> passwords = new ArrayList<>();

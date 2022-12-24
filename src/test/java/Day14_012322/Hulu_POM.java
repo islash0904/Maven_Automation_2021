@@ -1,13 +1,15 @@
 package Day14_012322;
 
+import Day9_010822.Reusable_Action;
 import Hulu.BaseClass_2;
-import Reusable_Library.Reusable_Annotation;
+import Reusable_Library.Reusable_Annotations;
+import Reusable_Library.Reusable_Annotations;
 import com.relevantcodes.extentreports.LogStatus;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 
-public class Hulu_POM extends Reusable_Annotation {
+public class Hulu_POM extends Reusable_Annotations {
 
 
     @Test
@@ -16,8 +18,8 @@ public class Hulu_POM extends Reusable_Annotation {
 
         ArrayList<String> emails = new ArrayList<>();
 
-        emails.add("sandths987678765874487@gmail.com");
-        emails.add("giveugf998787556075678 9687@gmail.com");
+        emails.add("sandths987675433874487@gmail.com");
+        emails.add("giveugf998787565439687@gmail.com");
 
 
         ArrayList<String> passwords = new ArrayList<>();
@@ -56,7 +58,22 @@ public class Hulu_POM extends Reusable_Annotation {
         gender.add("Male");
         gender.add("Female");
 
-        for (int i = 0; i < emails.size(); i++) {
+
+
+            //Navigate to hulu.com
+            driver.navigate().to("https://www.hulu.com");
+
+            //Verify title 'Streams TV and Movies'
+            String actualTitle = driver.getTitle();
+            if (actualTitle.equals("Stream TV and Movies")) {
+                System.out.println("Title matches as 'Stream TV and Movies Live and Online | Hulu'");
+            } else {
+                System.out.println("Title doesn't match. Actual title is " + actualTitle);
+            }//
+
+            //Scroll to the view by pixels
+            Reusable_Action.scrollMethod(driver, "0", "3250", "scroll");
+
 
 
             logger.log(LogStatus.INFO, "Navigating to Hulu home page");
@@ -64,27 +81,27 @@ public class Hulu_POM extends Reusable_Annotation {
 
             BaseClass_2.homePage_2().SelectButton();
 
-            BaseClass_2.create_your_account_2().Emails("andths987678765874487@gmail.com");
+            BaseClass_2.create_your_account_2().Emails("sandths9876655647654487@gmail.com");
 
-            BaseClass_2.create_your_account_2().PassWords("123456");
+            BaseClass_2.create_your_account_2().PassWords("876345");
 
-            BaseClass_2.create_your_account_2().Names("Tim");
+            BaseClass_2.create_your_account_2().Names("JOhn");
 
             BaseClass_2.create_your_account_2().ClickMonth();
 
-            BaseClass_2.create_your_account_2().SelectMonmth();
+            BaseClass_2.create_your_account_2().SelectMonth("October");
 
             BaseClass_2.create_your_account_2().ClickBirthDay();
 
-           // BaseClass_2.create_your_account_2().SelectBirthDay();
+            BaseClass_2.create_your_account_2().SelectBirthDay("17");
 
             BaseClass_2.create_your_account_2().ClickbirthYear();
 
-            BaseClass_2.create_your_account_2().SelectBirthYear();
+            BaseClass_2.create_your_account_2().SelectBirthYear("1998");
 
             BaseClass_2.create_your_account_2().ClickGender();
 
-            BaseClass_2.create_your_account_2().Selectgender();
+            BaseClass_2.create_your_account_2().Selectgender("Male");
 
             BaseClass_2.create_your_account_2().ContinueButton();
 
@@ -100,10 +117,19 @@ public class Hulu_POM extends Reusable_Annotation {
 
             BaseClass_2.log_in().loginAccount();
 
-            BaseClass_2.userName().userName();
+            BaseClass_2.userName().UserName("Gladiator");
 
 
-        }
+
+            //Billing Page
+            String MonthlyResult = BaseClass_2.amount_page3().SubsriptionAmount();
+            System.out.println("My subscription monthly is " + MonthlyResult);
+
+            String DueResult = BaseClass_2.amount_page3().Totalaount();
+            System.out.println("My result is " + DueResult);
+
+            driver.manage().deleteAllCookies();
+
 
 
     }//end ofn test

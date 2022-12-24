@@ -155,22 +155,7 @@ public class Reusable_Actions_Loggers_POM {
     }//end of Select by text method
 
 
-    public static void selectMethod(WebDriver driver, String textInput, WebElement xpath, ExtentTest logger, String elementName) throws InterruptedException {
-        WebDriverWait wait = new WebDriverWait(driver,15);
-        //Thread.sleep(2000);
-        System.out.println("Selecting element " + elementName);
-        logger.log(LogStatus.INFO,"Clicking on element " + elementName);
-        WebElement startList = wait.until(ExpectedConditions.visibilityOf((xpath)));
-        //select command can only be used when the drop down element is under 'Select' tag
-        Select sDropDown = new Select(startList);
-        try {
-            //select by visible text
-            sDropDown.selectByVisibleText(textInput);
-        } catch (Exception e){
-            System.out.println("Unable to select from "+elementName+ " Error: " +e);
-            logger.log(LogStatus.FAIL,"Unable to select on " + elementName + " Error:" + e);
-        }//end of try catch
-    }//end of selectMethod method
+
 
 
     //method to capture screenshot when logger fails
